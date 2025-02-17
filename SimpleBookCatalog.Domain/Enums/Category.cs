@@ -2,6 +2,9 @@
 {
     public enum Category
     {
-        Science=1,Technology,Fitness,Travel
+        Science=1,
+        Technology=2,
+        Fitness=3,
+        Travel=4
     }
 }
