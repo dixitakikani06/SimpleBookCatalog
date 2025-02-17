@@ -16,6 +16,7 @@ namespace SimpleBookCatalog.Domain.Entities
 		[StringLength(100)]
 		public string? Author { get; set; }
 
+		[Required(ErrorMessage = "Please provide a PublicationDate")]
 		public DateTime? PublicationDate { get; set; }
 
 		[EnumDataType(typeof(Category), ErrorMessage = "Please select a category")]
