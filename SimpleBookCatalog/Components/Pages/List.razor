@@ -1,6 +1,5 @@
 ﻿@page "/"
 @inject IBookRepository Repository
-@attribute [StreamRendering]
 
 <PageTitle>
     Book List
@@ -21,7 +20,7 @@
             @foreach(var book in books)
             {
                 <div class="book-item">
-                    <BookCard Book="book"/>
+                    <BookCard @rendermode="InteractiveServer" Book="book"/>
                 </div>
             }
         }else
@@ -39,7 +38,6 @@
 
     protected override async Task OnInitializedAsync()
     {
-        await Task.Delay(2000);
         books = await Repository.GetAllAsync();
     }
 }
